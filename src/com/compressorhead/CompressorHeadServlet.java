@@ -33,6 +33,11 @@ public class CompressorHeadServlet extends HttpServlet {
 			} catch (Exception e) {
 				height = 0;
 			}
+		
+		// If height and width are both zero, then set both to 300 to prevent crash.
+		if (height == 0 && width == 0) {
+			height = width = 300;
+		}
 
 		// Fetching the image from URL and writing it to a byte array.
 		URL imageURL = new URL(img);
