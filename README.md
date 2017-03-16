@@ -9,6 +9,8 @@
 
 Image URL - `https://github.com/free4murad/CompressorHead/blob/master/Image.png?raw=true`
 
+(Original image)
+![](https://github.com/free4murad/CompressorHead/blob/master/Image.png?raw=true)
 
 
 To resize the image 
