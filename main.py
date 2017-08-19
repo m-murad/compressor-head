@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 from google.appengine.api import images
+from google.appengine.api import memcache
 from google.appengine.api import urlfetch
 
+import logging
 import webapp2
 
 class HomeHandler(webapp2.RequestHandler):
@@ -34,7 +36,7 @@ def set_output_format(requested_format):
     elif requested_format.upper() == 'WEBP':
         output_format = images.WEBP
         requested_format = 'webp'
-    else: # Default format is a JPEG.
+    else: # Default format is JPEG.
         output_format = images.JPEG
         requested_format = 'jpeg'
     return output_format, requested_format
@@ -56,12 +58,26 @@ class ImageHandler(webapp2.RequestHandler):
         
         output_format, requested_format = set_output_format(requested_format)
 
+        memcache_store_key = '{},{},{},{}'.format(image_url, height, width, requested_format)
+        output = memcache.get(memcache_store_key)
+        if output is not None:
+            logging.info('Image found in cache.')
+            self.response.headers['Content-Type'] = 'image/' + requested_format
+            self.response.write(output)
+            return
+
         image = images.Image(urlfetch.fetch(image_url).content)
         if height==0 or width==0:
             image.resize(width=width, height=height)
         else:
             image.resize(width=width, height=height, allow_stretch=True)
         output = image.execute_transforms(output_encoding=output_format)
+
+        added = memcache.add(memcache_store_key, output)
+        if added:
+            logging.info('Image added to cache.')
+        if not added:
+            logging.info('Image couldn\'t be cached.')
 
         self.response.headers['Content-Type'] = 'image/' + requested_format
         self.response.write(output)
