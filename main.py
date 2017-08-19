@@ -23,6 +23,24 @@ class HomeHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('This is CompressorHead.')
 
+
+def set_output_format(requested_format):
+    if requested_format.upper() == 'JPEG':
+        output_format = images.JPEG
+        requested_format = 'jpeg'
+    elif requested_format.upper() == 'PNG':
+        output_format = images.PNG
+        requested_format = 'png'
+    elif requested_format.upper() == 'WEBP':
+        output_format = images.WEBP
+        requested_format = 'webp'
+    else: # Default format is a JPEG.
+        output_format = images.JPEG
+        requested_format = 'jpeg'
+    return output_format, requested_format
+
+
+
 class ImageHandler(webapp2.RequestHandler):
     def get(self):
 
@@ -30,12 +48,15 @@ class ImageHandler(webapp2.RequestHandler):
         image_url = self.request.get('image_url')
         height = int(self.request.get('height'))
         width = int(self.request.get('width'))
+        requested_format = str(self.request.get('format')).strip().lower()
+        
+        output_format, requested_format = set_output_format(requested_format)
 
         image = images.Image(urlfetch.fetch(image_url).content)
         image.resize(width=width, height=height)
-        output = image.execute_transforms(output_encoding=images.JPEG)
+        output = image.execute_transforms(output_encoding=output_format)
 
-        self.response.headers['Content-Type'] = 'image/jpeg'
+        self.response.headers['Content-Type'] = 'image/' + requested_format
         self.response.write(output)
 
 app = webapp2.WSGIApplication([
