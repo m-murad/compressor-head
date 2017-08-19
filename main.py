@@ -39,21 +39,28 @@ def set_output_format(requested_format):
         requested_format = 'jpeg'
     return output_format, requested_format
 
-
-
 class ImageHandler(webapp2.RequestHandler):
     def get(self):
 
         # Getting the URL parameters.
         image_url = self.request.get('image_url')
-        height = int(self.request.get('height'))
-        width = int(self.request.get('width'))
+        try:
+            height = int(self.request.get('height'))
+        except:
+            height = 0
+        try:
+            width = int(self.request.get('width'))
+        except:
+            width = 0
         requested_format = str(self.request.get('format')).strip().lower()
         
         output_format, requested_format = set_output_format(requested_format)
 
         image = images.Image(urlfetch.fetch(image_url).content)
-        image.resize(width=width, height=height)
+        if height==0 or width==0:
+            image.resize(width=width, height=height)
+        else:
+            image.resize(width=width, height=height, allow_stretch=True)
         output = image.execute_transforms(output_encoding=output_format)
 
         self.response.headers['Content-Type'] = 'image/' + requested_format
