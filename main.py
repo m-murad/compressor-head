@@ -73,11 +73,14 @@ class ImageHandler(webapp2.RequestHandler):
             image.resize(width=width, height=height, allow_stretch=True)
         output = image.execute_transforms(output_encoding=output_format)
 
-        added = memcache.add(memcache_store_key, output)
-        if added:
-            logging.info('Image added to cache.')
-        if not added:
-            logging.info('Image couldn\'t be cached.')
+        try:
+            added = memcache.add(memcache_store_key, output)
+            if added:
+                logging.info('Image added to cache.')
+            if not added:
+                logging.info('Image couldn\'t be cached.')
+        except ValueError:
+            logging.error('memcache.add() failed - image larger than 1MB')
 
         self.response.headers['Content-Type'] = 'image/' + requested_format
         self.response.write(output)
