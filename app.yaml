@@ -5,6 +5,11 @@ runtime: python27
 threadsafe: true
 
 handlers:
+- url: /license
+  static_files: license.txt
+  upload: license.txt
+  secure: optional
+
 - url: .*
   script: main.app
   secure: optional

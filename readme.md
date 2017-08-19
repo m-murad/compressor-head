@@ -8,3 +8,5 @@ This is a python based web application hosted on Google App Engine. By using thi
 [Google App Engine (Python): URL downloading API](https://cloud.google.com/appengine/docs/standard/python/refdocs/google.appengine.api.urlfetch.html)  
 [Vinay Sajip: logging](http://www.red-dove.com/python_logging.html)  
 [The Webapp2 Maintainers: webapp2](https://cloud.google.com/appengine/docs/standard/python/refdocs/google.appengine.api.images.html)  
+## License
+[Apache Version 2.0](http://compressor-head.appspot.com/license)
