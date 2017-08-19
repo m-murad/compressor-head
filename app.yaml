@@ -10,6 +10,11 @@ handlers:
   upload: license.txt
   secure: optional
 
+- url: /image
+  static_files: got-map.jpg
+  upload: got-map.jpg
+  secure: optional
+
 - url: .*
   script: main.app
   secure: optional
