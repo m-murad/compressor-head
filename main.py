@@ -21,6 +21,7 @@ from google.appengine.api import urlfetch
 import logging
 import webapp2
 
+
 class HomeHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('This is CompressorHead.')
@@ -36,10 +37,11 @@ def set_output_format(requested_format):
     elif requested_format.upper() == 'WEBP':
         output_format = images.WEBP
         requested_format = 'webp'
-    else: # Default format is JPEG.
+    else:  # Default format is JPEG.
         output_format = images.JPEG
         requested_format = 'jpeg'
     return output_format, requested_format
+
 
 class ImageHandler(webapp2.RequestHandler):
     def get(self):
@@ -55,7 +57,7 @@ class ImageHandler(webapp2.RequestHandler):
         except:
             width = 0
         requested_format = str(self.request.get('format')).strip().lower()
-        
+
         output_format, requested_format = set_output_format(requested_format)
 
         memcache_store_key = '{},{},{},{}'.format(image_url, height, width, requested_format)
@@ -67,7 +69,7 @@ class ImageHandler(webapp2.RequestHandler):
             return
 
         image = images.Image(urlfetch.fetch(image_url).content)
-        if height==0 or width==0:
+        if height == 0 or width == 0:
             image.resize(width=width, height=height)
         else:
             image.resize(width=width, height=height, allow_stretch=True)
@@ -84,6 +86,7 @@ class ImageHandler(webapp2.RequestHandler):
 
         self.response.headers['Content-Type'] = 'image/' + requested_format
         self.response.write(output)
+
 
 app = webapp2.WSGIApplication([
     ('/', HomeHandler),
