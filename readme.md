@@ -29,6 +29,27 @@ This will return an image `164 KB PNG` image with dimentions `383x250`
 This will return an image `41 KB JPEG` image with dimentions `500x350`
 You can also use the `WEBP` format. I haven't used it here because GitHub doesnot render WEBPs. A sample WEBP conversion of this conversion can be found [here](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=webp).
 
+## Deployment on Local Server
+Type the following code to setup the Google AppEngine environment
+```
+cd ~
+mkdir comp_head_local
+cd comp_head_local
+wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
+unzip google_appengine_1.9.63.zip
+export PATH=$PATH:/root/comp_head_local/google_appengine/
+sudo apt-get -y install python2.7
+git clone https://github.com/jboss-outreach/compressor-head
+cd google_appengine
+python dev_appserver.py ../compressor-head --port=45456 --host=0.0.0.0
+```
+This will start the local server which can be accessed using
+```http://localhost:45456/```
+
+Or
+
+```http://<your_public_ip>:45456/```
+
 ## Author
 [@m-murad](https://github.com/m-murad)  
 ## Refrence
