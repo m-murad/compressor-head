@@ -1,0 +1,3 @@
+protobuf==3.5.0.post1
+webapp2==3.0.0b1
+google-api-python-client==1.6.4
