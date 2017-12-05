@@ -1,0 +1,30 @@
+# Compressor-head
+This is a python based web application hosted on Google App Engine. By using this app one can compress/resize an image before downloading it. This saves the user data that otherwise needs to be downloaded. Being run on Google App Engine the conversion is fast. Also I have used the memcache library which speeds up the process if same image is being retrived by multiple users.
+## Usage
+*URL* - ```https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg/?image_url=[IMAGE_URL]&width=[WIDTH]&height=[HEIGHT]&format=[FORMAT]```
+
+where
+
+    *IMAGE_URL* is the URL of the image which is to be compressed.
+    *WIDTH* is the desired width.
+    *HEIGHT* is the desired height.
+    *FORMAT* is the desired image format (Supported formats - JPEG, PNG and WEBP).
+Both WIDTH and HEIGHT should be positive integers. Both WIDTH and HEIGHT cannot be zero. If one of the two is zero it will scale that non-zero dimention and the other dimention will be scaled such that the aspect ratio remains the same. If both are not zero, both dimentions will scale accordingly which might change the aspect ratio of the image.  
+#### Usage example
+Sample Image URL - https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg
+This is a `158 KB JPEG` image. Dimention `1280x800`  
+![](https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg)  
+
+To resize the image -
+- Resize (Width) : `https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg/?image_url=https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg&width=500&height=0&format=jpeg`  
+![](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=0&format=jpeg)  
+This will return an image `36.2 KB JPEG` image with dimentions `500x312`
+
+- Resize (Height) : `https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg/?image_url=http://compressor-head.appspot.com/image&width=0&height=250&format=png`  
+![](https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg/?image_url=http://compressor-head.appspot.com/image&width=0&height=250&format=png)  
+This will return an image `28.5 KB JPEG` image with dimentions `400x250`
+- Resize (Width & Height) : `https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=jpeg`  
+![](https://blogs-images.forbes.com/olliebarder/files/2017/02/gundam00_new.jpg/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=jpeg)  
+This will return an image `42.4 KB JPEG` image with dimentions `500x350`
+You can also use the `WEBP` format. I haven't used it here because GitHub doesnot render WEBPs. A sample WEBP conversion of this conversion can be found [here](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=webp).
+
