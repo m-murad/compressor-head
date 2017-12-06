@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/jboss-outreach/compressor-head.svg)](https://travis-ci.org/jboss-outreach/compressor-head)
+[![Build Status](https://travis-ci.org/jboss-outreach/compressor-head.svg?branch=addtravis)](https://travis-ci.org/Hatollint/compressor-head)
+![Codacy Badge](https://api.codacy.com/project/badge/Grade/9cd479ed37e649cb9e615b20410fb79f)
 
 # Compressor-head
 This is a python based web application hosted on Google App Engine. By using this app one can compress/resize an image before downloading it. This saves the user data that otherwise needs to be downloaded. Being run on Google App Engine the conversion is fast. Also I have used the memcache library which speeds up the process if same image is being retrived by multiple users.
