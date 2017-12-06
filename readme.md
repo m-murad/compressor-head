@@ -42,9 +42,22 @@ Type the following code to setup the Google AppEngine environment
 cd ~
 mkdir comp_head_local
 cd comp_head_local
+
+
+#If you have a Mac then you should first install homebrew, pkg-configure and wget:
+	cd ~
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+	brew install pkg-configure
+	cd ~
+	brew install wget
+	cd comp_head_local
+
 wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
 unzip google_appengine_1.9.63.zip
 export PATH=$PATH:/root/comp_head_local/google_appengine/
+
+# If you have a Mac then instead of entering the line below you can enter "brew install python"
+
 sudo apt-get -y install python2.7
 git clone https://github.com/jboss-outreach/compressor-head
 cd google_appengine
