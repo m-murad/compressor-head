@@ -102,6 +102,19 @@ git checkout <your-name-branch>
 git fetch upstream
 git rebase upstream/master
 ```
+#### Deploy on Windows (with minimal use of CMD):
+
+Download Google App Engine from [here](https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip), if you haven't already.
+Unzip it and add the directory to PATH in environment variables. More help can be found [here](http://www.itprotoday.com/management-mobility/how-can-i-add-new-folder-my-system-path)
+
+Download and install python, if you haven't already.
+
+Clone the repository, or download as zip. Help can be found [here](https://www.google.co.in/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiA5_-4__fXAhWKsY8KHVSuDGQQFggrMAA&url=https%3A%2F%2Fhelp.github.com%2Farticles%2Fcloning-a-repository%2F&usg=AOvVaw0J0cOUL5nBtjkmtQfsj0w-).
+
+From the Google App Engine folder, open CMD by using ```Shift+Right click```. 
+Use the following code:
+```python dev_appserver.py "PATH_TO_ZIP" -port=45456 --host=0.0.0.0```
+where ```"PATH_TO_ZIP"``` is the path to the cloned/downloaded repository.
 
 Now you can send your changes.
 ```bash
