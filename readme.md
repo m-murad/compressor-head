@@ -29,7 +29,11 @@ Where
 *HEIGHT* is the desired height.
 *FORMAT* is the desired image format (Supported formats - JPEG, PNG and WEBP).
 ```
-Both WIDTH and HEIGHT should be positive integers. Both WIDTH and HEIGHT cannot be zero. If one of the two is zero it will scale that non-zero dimention and the other dimention will be scaled such that the aspect ratio remains the same. If both are not zero, both dimentions will scale accordingly which might change the aspect ratio of the image.
+
+Both WIDTH and HEIGHT should be integers greater than or equal to zero:
+ * If *both are zero*, the image will not be scaled.
+ * If *one of the two is zero*, it will scale that non-zero dimension and the other dimention will be scaled such that the aspect ratio remains the same.
+ * If *both are not zero*, both dimentions will scale accordingly which might change the aspect ratio of the image.
 
 ### <a id="usage_exm"></a>Usage example
 
