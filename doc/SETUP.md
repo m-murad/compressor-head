@@ -10,22 +10,22 @@ The most important thing is to install Google App Engine. Without this, this pro
 
 ### Windows, Linux:
 ```bash
-cd ~
-mkdir comp_head_local
-cd comp_head_local
-wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
-unzip google_appengine_1.9.63.zip
-export PATH=$PATH:/root/comp_head_local/google_appengine/
+$ cd ~
+$ mkdir comp_head_local
+$ cd comp_head_local
+$ wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
+$ unzip google_appengine_1.9.63.zip
+$ export PATH=$PATH:/root/comp_head_local/google_appengine/
 ```
 
 ### MacOS:
 ```bash
-cd ~
-mkdir comp_head_local
-cd comp_head_local
-curl -O https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
-unzip google_appengine_1.9.63.zip
-export PATH=$PATH:/root/comp_head_local/google_appengine/
+$ cd ~
+$ mkdir comp_head_local
+$ cd comp_head_local
+$ curl -O https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
+$ unzip google_appengine_1.9.63.zip
+$ export PATH=$PATH:/root/comp_head_local/google_appengine/
 ```
 
 ## <a id="ins_py"></a>Installing Python
@@ -33,30 +33,30 @@ After installing the GAE, install [Python](https://www.python.org) (if not insta
 
 ### Windows, Linux:
 ```
-sudo apt-get -y install python2.7
+$ sudo apt-get -y install python2.7
 ```
 
 ### MacOS:
 ```
-sudo installer -pkg python2.7
+$ sudo installer -pkg python2.7
 ```
 
 Install [Git](https://git-scm.com) (if not installed)
 ```bash
-cd ~
-sudo apt install git
+$ cd ~
+$ sudo apt install git
 ```
 
 Lastly, head back to the comp_head_local folder
 ```bash
-cd comp_head_local
+$ cd comp_head_local
 ```
 
 ## <a id="run_app"></a>Running the app
 Then, you can bend the repository to your computer and run a program from there
 
 ```
-git clone https://github.com/jboss-outreach/compressor-head
-cd google_appengine
-python dev_appserver.py ../compressor-head --port=45456 --host=0.0.0.0
+$ git clone https://github.com/jboss-outreach/compressor-head
+$ cd google_appengine
+$ python dev_appserver.py ../compressor-head --port=45456 --host=0.0.0.0
 ```

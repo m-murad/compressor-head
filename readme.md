@@ -30,35 +30,38 @@ Where
 *FORMAT* is the desired image format (Supported formats - JPEG, PNG and WEBP).
 ```
 
-Both WIDTH and HEIGHT should be integers greater than or equal to zero:
- * If *both are zero*, the image will not be scaled.
- * If *one of the two is zero*, it will scale that non-zero dimension and the other dimention will be scaled such that the aspect ratio remains the same.
- * If *both are not zero*, both dimentions will scale accordingly which might change the aspect ratio of the image.
+Both WIDTH and HEIGHT should be integers greater than or equal to 0:
+ * If *both are 0*, the image will not be scaled.
+ * If *one of the two is 0*, it will scale that non-zero dimension and the other dimension will be scaled such that the aspect ratio remains the same.
+ * If *both are greater than 0*, both the width and height will scale accordingly, which may change the aspect ratio of the image.
 
 ### <a id="usage_exm"></a>Usage example
 
 Sample Image URL - http://compressor-head.appspot.com/image
-This is a `5.8 MB JPEG` image. Dimention `5649×3684`
+This is a `5.8 MB JPEG` image, with dimensions of `5649×3684`
 ![](http://compressor-head.appspot.com/image)
 
 To resize the image -
 - Resize (Width) : `http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=0&format=jpeg`
+Note: This retains the aspect ratio of the image, and the height is scaled accordingly.
 
 ![](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=0&format=jpeg)
 
-This returns an image `37 KB JPEG` image with dimentions `500x326`
+This returns an image `37 KB JPEG` image with dimensions `500x326`
 
 - Resize (Height) : `http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=0&height=250&format=png`
+Note: This retains the aspect ratio of the image, and the width is scaled accordingly.
 
 ![](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=0&height=250&format=png)
 
-This returns an image `164 KB PNG` image with dimentions `383x250`
+This returns an image `164 KB PNG` image with dimensions `383x250`
 
 - Resize (Width & Height) : `http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=jpeg`
+Note: This may change the aspect ratio of the image.
 
 ![](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=jpeg)
 
-This returns an image `41 KB JPEG` image with dimentions `500x350`
+This returns an image `41 KB JPEG` image with dimensions `500x350`
 
 **Note:** You can also use the `WEBP` format, but it's not shown as an example as GitHub does not render WEBPs. A sample WEBP conversion of this conversion can be found [here](http://compressor-head.appspot.com/image/?image_url=http://compressor-head.appspot.com/image&width=500&height=350&format=webp).
 
