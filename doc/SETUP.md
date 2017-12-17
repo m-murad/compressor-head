@@ -4,11 +4,13 @@
 * [Installing Google App Engine](#ins_gae)
 * [Installing Python](#ins_py)
 * [Running the app](#run_app)
+* [References](#ref)
 
 ## <a id="ins_gae"></a>Installing Google App Engine
 The most important thing is to install Google App Engine. Without this, this program will not work! To install, you need to download Google App Engine and then install it.
 
 ### Windows, Linux:
+* Make sure that you open Command Prompt as admin in Windows.
 ```bash
 $ cd ~
 $ mkdir comp_head_local
@@ -60,3 +62,15 @@ $ git clone https://github.com/jboss-outreach/compressor-head
 $ cd google_appengine
 $ python dev_appserver.py ../compressor-head --port=45456 --host=0.0.0.0
 ```
+* Use ``` chmod +x /file/directory/file``` if a file is denied to run.
+
+## <a id="ref"></a>References
+ * [How to use GitHub](https://guides.github.com/activities/hello-world/)
+ * [Git basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+ * [Git commands handbook](https://git-scm.com/docs)
+ * [How to use Python](https://www.python.org/about/gettingstarted/) 
+ * [About Google App engine](https://cloud.google.com/docs/overview/)
+ * [Command Prompt handbook](http://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/)
+ * [Linux Terminal handbook](http://linuxcommand.org/)
+ * [MacOS Terminal handbook](https://developer.apple.com/library/content/documentation/OpenSource/Conceptual/ShellScripting/CommandLInePrimer/CommandLine.html)
+ * [Chat with us !](https://gitter.im/jboss-outreach)

@@ -15,6 +15,7 @@ Running on the Google App Engine, the image conversion is nearly instantaneous. 
 * [Working with the project](#work)
 * [API reference](#ref)
 * [Author](#author)
+* [Contact us](#gitter)
 * [Copyright](#copyright)
 
 ### <a id="usage"></a>Usage
@@ -82,6 +83,8 @@ If you'd like to get more hands-on with the project, check out the following doc
 ### <a id="author"></a>Author
 
 [@m-murad](https://github.com/m-murad)
+
+#### <a id="gitter"></a>For any queries, [chat with us here](https://gitter.im/jboss-outreach)
 
 ## <a id="copyright"></a>Copyright
 

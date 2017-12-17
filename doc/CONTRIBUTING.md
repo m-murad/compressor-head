@@ -9,6 +9,7 @@
 * [Sending a pull request](#pull)
 * [Amending your pull request](#pull_amend)
 * [Cleaning up](#clean_up)
+* [References](#ref)
 
 ## Introduction
 The first thing to do is create an account on GitHub (if you do not have one yet). You should then read the rules of participation for the development of the project you selected. These rules are usually found in a file CONTRIBUTING.md in the root of the repository.
@@ -92,3 +93,9 @@ Instead of the last command, you can also run
 ```bash
 $ git push origin :<your-name-branch>
 ```
+
+## <a id="ref"></a>References
+ * [How to use GitHub](https://guides.github.com/activities/hello-world/)
+ * [Git basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+ * [Git commands handbook](https://git-scm.com/docs)
+ * [Chat with us !](https://gitter.im/jboss-outreach)
