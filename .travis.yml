@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+# command to install dependencies
+install:
+  - alias python=python2.7
+  - mkdir ~/testing
+  - cp -rf * ~/testing
+  - pip install -r requirements.txt
+  - cd ~
+  - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
+  - unzip google_appengine_1.9.63.zip
+  - export PATH=$PATH:~/google_appengine/
+# command to run tests
+script:
+  - python -m unittest discover  # or py.test for Python versions 3.5 and below

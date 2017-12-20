@@ -69,7 +69,10 @@ class ImageHandler(webapp2.RequestHandler):
             return
 
         image = images.Image(urlfetch.fetch(image_url).content)
-        if height == 0 or width == 0:
+        if height == 0 and width == 0:
+            # No resizing done
+            pass
+        elif height == 0 or width == 0:
             image.resize(width=width, height=height)
         else:
             image.resize(width=width, height=height, allow_stretch=True)
