@@ -12,9 +12,9 @@
 * [References](#ref)
 
 ## Introduction
-The first thing to do is create an account on GitHub (if you do not have one yet). You should then read the rules of participation for the development of the project you selected. These rules are usually found in a file CONTRIBUTING.md in the root of the repository.
+The first thing to do is [create an account](https://github.com/join) on GitHub (if you do not have one yet). You should then read the rules of participation for the development of the project you selected. These rules are usually found in a file CONTRIBUTING.md in the root of the repository of the project.
 
-Usually, there are several ways to participate in the development of a project. The primary ones are sending a message about some error or desired improvement (submitting ann *Issue*) or directly creating a Pull Request with your correction or improvement (Code Contributing). You can also participate in the improvement of documentation, answers to questions that have arisen from other developers, and much more.
+Usually, there are several ways to participate in the development of a project. The primary ones are sending a message about some error or desired improvement (submitting ann *Issue*) or directly creating a Pull Request with your correction or improvement (Code Contributing). You can also participate in the improvement of documentation, answers to questions that have arisen from other developers, suggesting bug fixes and much more.
 
 
 ## <a id="fork"></a>Forking the project
@@ -48,7 +48,7 @@ $ git fetch upstream
 $ git checkout -b <your-name-branch> upstream/master #exemple
 ```
 
-Now you can easily start working on the code. To work on the project / setup on your local system, open Finder/File Explorer and find the directory where you cloned the repo. Then, open it using an editor of your preference.
+Now you can easily start working on the code. To work on the project / setup on your local system, open Finder/File Explorer and find the directory where you cloned the repo. Then, open it using an editor like Notepad++ or an IDE like [Intellij](https://www.jetbrains.com/idea) or any other tool as per your preference.
 
 While working, remember the following rules:
 * Follow the coding standards (usually PSR standards),
