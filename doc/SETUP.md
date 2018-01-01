@@ -9,14 +9,18 @@
 ## <a id="ins_gae"></a>Installing Google App Engine
 The most important thing is to install Google App Engine. Without this, this program will not work! To install, you need to download Google App Engine and then install it.
 
-### Windows, Linux:
-* Make sure that you open Command Prompt as admin in Windows.
+### Windows:
+* Make sure that you open Command Prompt as admin.
+1. Download the [Google App Engine SDK for Windows](https://storage.googleapis.com/appengine-sdks/featured/GoogleAppEngine-1.9.64.msi)
+2. Double-click the SDK file you downloaded and follow the prompts to install the SDK
+
+### Linux:
 ```bash
 $ cd ~
 $ mkdir comp_head_local
 $ cd comp_head_local
-$ wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
-$ unzip google_appengine_1.9.63.zip
+$ wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.64.zip
+$ unzip google_appengine_1.9.64.zip
 $ export PATH=$PATH:/root/comp_head_local/google_appengine/
 ```
 
@@ -25,15 +29,19 @@ $ export PATH=$PATH:/root/comp_head_local/google_appengine/
 $ cd ~
 $ mkdir comp_head_local
 $ cd comp_head_local
-$ curl -O https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip
-$ unzip google_appengine_1.9.63.zip
+$ curl -O https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.64.zip
+$ unzip google_appengine_1.9.64.zip
 $ export PATH=$PATH:/root/comp_head_local/google_appengine/
 ```
 
 ## <a id="ins_py"></a>Installing Python
-After installing the GAE, install [Python](https://www.python.org) (if not installed).
+After installing the GAE, install [Python *2.7*](https://www.python.org) (if not installed).
 
-### Windows, Linux:
+### Windows:
+1. Download the [Python 2.7 installer](https://www.python.org/ftp/python/2.7.14/python-2.7.14.amd64.msi)
+2. Double-click the installer and follow the prompts to install Python 2.7
+
+### Linux:
 ```
 $ sudo apt-get -y install python2.7
 ```
