@@ -7,7 +7,7 @@
 * [References](#ref)
 
 ## <a id="ins_gae"></a>Installing Google App Engine
-The most important thing is to install Google App Engine. Without this, this program will not work! To install, you need to download Google App Engine and then install it.
+The first and foremost step you should compelete is to install Google App Engine. *The program will not function without this step!*
 
 ### Windows:
 * Make sure that you open Command Prompt as admin.
@@ -25,6 +25,14 @@ $ export PATH=$PATH:/root/comp_head_local/google_appengine/
 ```
 
 ### MacOS:
+
+ * [Download Google App Engine for macOS](https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.63.zip)
+ * Double-click on the zip file downloaded to expand it.
+ * Create a new directory on your computer specific to **compressor-head**. Eg: *comp_head_local* (This is what we will use in this guide)
+ * Navigate to this new directory and move the newly downloaded *google_appengine* to your directory.
+
+OR, if you prefer executing these steps through the command-line,
+
 ```bash
 $ cd ~
 $ mkdir comp_head_local
@@ -33,6 +41,9 @@ $ curl -O https://storage.googleapis.com/appengine-sdks/featured/google_appengin
 $ unzip google_appengine_1.9.64.zip
 $ export PATH=$PATH:/root/comp_head_local/google_appengine/
 ```
+
+That's it! Move on to the next steps to run the program.
+
 
 ## <a id="ins_py"></a>Installing Python
 After installing the GAE, install [Python *2.7*](https://www.python.org) (if not installed).
