@@ -14,6 +14,7 @@ Running on the Google App Engine, the image conversion is nearly instantaneous. 
 * [Usage example](#usage_exm)
 * [Working with the project](#work)
 * [API reference](#ref)
+* [Set up *Compressor-head* in Google Cloud Platform](#google_cloud)
 * [Author](#author)
 * [Contact us](#gitter)
 * [Copyright](#copyright)
@@ -79,6 +80,33 @@ If you'd like to get more hands-on with the project, check out the following doc
  * [Google App Engine (Python): URL downloading API](https://cloud.google.com/appengine/docs/standard/python/refdocs/google.appengine.api.urlfetch.html)
  * [Vinay Sajip: logging](http://www.red-dove.com/python_logging.html)
  * [The Webapp2 Maintainers: webapp2](https://cloud.google.com/appengine/docs/standard/python/refdocs/google.appengine.api.images.html)
+
+### <a id="google_cloud"></a>Set up *Compressor-head* in Google Cloud Platform
+#### Steps to follow
+Before starting with steps you must have installed the lastest version of [Phyton](https://www.python.org/) on your local machine.
+
+1. **Sign up** or **log in** to the [Google Cloud Platform Console](https://console.cloud.google.com). ***(important)***
+
+2. Create a new project on it.
+
+    ![](https://image.ibb.co/bNyAu6/my_proj.png)
+    ![](https://image.ibb.co/eZ6wZ6/add_proj.png)
+3. In the upper left corner, click on the three perpendicular lines ![](https://image.ibb.co/fZH3E6/three_perp.png), and then select API Manager.
+4. In the Google Cloud APIs section, select Compute Engine API. 
+
+![](https://image.ibb.co/iuxg1m/cloud_apis.png)
+
+###### Click the Enable button.
+
+Install and start the Google Cloud SDK on your local machine's platform by referencing the Before you Begin and initialize the SDK sections with one of the following links below:
+##### Instructions for 
+[Windows](https://cloud.google.com/sdk/docs/quickstart-windows)
+
+[Mac OS X](https://cloud.google.com/sdk/docs/quickstart-mac-os-x)
+
+[Linux](https://cloud.google.com/sdk/docs/quickstart-linux)
+
+[Debian and Ubuntu](https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu)
 
 ### <a id="author"></a>Author
 
