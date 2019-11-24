@@ -1,0 +1,26 @@
+# github.com/chai2010/webp v1.1.0
+github.com/chai2010/webp
+# github.com/golang/protobuf v1.3.1
+github.com/golang/protobuf/proto
+# github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646
+github.com/nfnt/resize
+# github.com/pkg/errors v0.8.1
+github.com/pkg/errors
+# golang.org/x/image v0.0.0-20191009234506-e7c1f5e7dbb8
+golang.org/x/image/bmp
+golang.org/x/image/tiff
+golang.org/x/image/ccitt
+golang.org/x/image/tiff/lzw
+# golang.org/x/net v0.0.0-20190603091049-60506f45cf65
+golang.org/x/net/context
+# google.golang.org/appengine v1.6.5
+google.golang.org/appengine
+google.golang.org/appengine/memcache
+google.golang.org/appengine/internal
+google.golang.org/appengine/internal/app_identity
+google.golang.org/appengine/internal/modules
+google.golang.org/appengine/internal/memcache
+google.golang.org/appengine/internal/base
+google.golang.org/appengine/internal/datastore
+google.golang.org/appengine/internal/log
+google.golang.org/appengine/internal/remote_api

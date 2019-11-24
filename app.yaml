@@ -1,0 +1,15 @@
+runtime: go113
+
+handlers:
+- url: /license
+  static_files: license.txt
+  upload: license.txt
+  secure: optional
+- url: /image
+  static_files: got-map.jpg
+  upload: got-map.jpg
+  secure: optional
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
